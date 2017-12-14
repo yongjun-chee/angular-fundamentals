@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule,
-
     PassengerDashboardModule
   ],
   bootstrap: [
