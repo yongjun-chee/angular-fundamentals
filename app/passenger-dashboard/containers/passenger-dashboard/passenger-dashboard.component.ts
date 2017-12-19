@@ -12,51 +12,63 @@ import { Passenger } from '../../models/passenger.interface'
       </passenger-count>
       <passenger-detail 
         *ngFor="let passenger of passengers;"
-        [detail]="passenger">
+        [detail]="passenger"
+        (edit)="handleEdit($event)"
+        (remove)="handleRemove($event)">
       </passenger-detail>
     </div>
   `
 })
-export class PassengerDashboardComponent implements OnInit{
+export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
   constructor() {}
-  
+
   ngOnInit() {
-    console.log('ngOnInit');
-    this.passengers = [{
-      id: 1,
-      fullname: "Stephen",
-      checkedIn: true,
-      checkInDate: 1490742000000,
-      children: null
-    },
-    {
-      id: 2,
-      fullname: "Rose",
-      checkedIn: false,
-      checkInDate: null,
-      children: [{ name: "Ted", age: 12 }, { name: "Chloe", age: 7 }]
-    },
-    {
-      id: 3,
-      fullname: "James",
-      checkedIn: true,
-      checkInDate: 1490742000000,
-      children: null
-    },
-    {
-      id: 4,
-      fullname: "Louise",
-      checkedIn: true,
-      checkInDate: 1490742000000,
-      children: [{ name: "Jessica", age: 1 }]
-    },
-    {
-      id: 5,
-      fullname: "Tina",
-      checkedIn: false,
-      checkInDate: null,
-      children: null
-    }];
+    console.log("ngOnInit");
+    this.passengers = [
+      {
+        id: 1,
+        fullname: "Stephen",
+        checkedIn: true,
+        checkInDate: 1490742000000,
+        children: null
+      },
+      {
+        id: 2,
+        fullname: "Rose",
+        checkedIn: false,
+        checkInDate: null,
+        children: [{ name: "Ted", age: 12 }, { name: "Chloe", age: 7 }]
+      },
+      {
+        id: 3,
+        fullname: "James",
+        checkedIn: true,
+        checkInDate: 1490742000000,
+        children: null
+      },
+      {
+        id: 4,
+        fullname: "Louise",
+        checkedIn: true,
+        checkInDate: 1490742000000,
+        children: [{ name: "Jessica", age: 1 }]
+      },
+      {
+        id: 5,
+        fullname: "Tina",
+        checkedIn: false,
+        checkInDate: null,
+        children: null
+      }
+    ];
+  }
+
+  handleEdit(event) {
+    console.log(event);
+  }
+
+  handleRemove(event) {
+    console.log(event);
   }
 }
