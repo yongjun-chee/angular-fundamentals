@@ -9,7 +9,7 @@ import { PassengerDashboardComponent } from '../../containers/passenger-dashboar
     <div>
       <h3>Airline Passengers!</h3>
       <div>
-        Total checked in: {{checkedInCount()}}/{{ items.length }}
+        Total checked in: {{checkedInCount()}}/{{ items?.length }}
       </div>
     </div>
   `
